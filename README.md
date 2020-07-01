@@ -7,9 +7,9 @@ Explanation follows here - https://www.terraform.io/docs/configuration/functions
 If a cli tool is required:
 
 ```bash
-git clone git@github.com:DannyLee12/cidrsubnet.git
+wget https://raw.githubusercontent.com/DannyLee12/cidrsubnet/master/cidrsubnet.py
 chmod +x cidrsubnet.py
-mv cidrsubnet.py /usr/bin/local/cidrsubnet
+mv cidrsubnet.py /usr/local/bin/cidrsubnet
 ```
 
 ### Usage
