@@ -13,6 +13,9 @@ def cidrsubnet(prefix: str, newbits: int, netnum: int) -> str:
     """
     if ':' in prefix:
         raise ValueError("IP6 addresses not supported")
+    if not 0 < netnum < 2 ** newbits:
+        raise ValueError(f"netnum is too large, only a value of  "
+                         f"{2 ** newbits -1} is acceptable")
     # Split the ip address into network and host
     address, notation = prefix.split("/")
     new_notation = int(notation) + newbits

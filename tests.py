@@ -13,3 +13,12 @@ class TestCidrSubnet(TestCase):
     def test_ip6(self):
         with self.assertRaises(ValueError):
             cidrsubnet("fd00:fd12:3456:7890::/56", 16, 162)
+
+    def test_large_netnum(self):
+        cidrsubnet("10.0.0.1/12", 3, 7)
+        with self.assertRaises(ValueError):
+            cidrsubnet("10.0.0.1/12", 3, 8)
+
+    def test_negative_netnum(self):
+        with self.assertRaises(ValueError):
+            cidrsubnet("10.1.1.1/12", 3, -1)
