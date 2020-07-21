@@ -15,7 +15,7 @@ mv cidrsubnet.py /usr/local/bin/cidrsubnet
 ### Usage
 
 ```bash
-cidrsubnet prefix netnum newbits
+cidrsubnet prefix newbits netnum
 
 > cidrsubnet "172.16.0.0/12" 4 2
 172.18.0.0/16

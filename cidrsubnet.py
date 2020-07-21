@@ -26,7 +26,7 @@ def cidrsubnet(prefix: str, newbits: int, netnum: int) -> str:
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        logger.error("Usage: ./cidrsubnet prefix netnum newbits "
+        logger.error("Usage: ./cidrsubnet prefix newbits netnum "
                      "i.e. ./cidrsubnet 10.1.2.0/24 4 15")
         sys.exit(1)
     prefix = sys.argv[1]
