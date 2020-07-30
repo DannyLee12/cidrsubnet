@@ -19,7 +19,7 @@ def cidrsubnet(prefix: str, newbits: int, netnum: int) -> str:
     # Split the ip address into network and host
     address, notation = prefix.split("/")
     new_notation = int(notation) + newbits
-    # Binary representation
+    # Convert to binary representation
     b = "".join([bin(int(x))[2:].zfill(8) for x in address.split(".")])
     b = b[:int(notation)] + bin(netnum)[2:].zfill(newbits) + b[new_notation:]
     address = ".".join([str(int(b[x:x+8], 2)) for x in range(0, 32, 8)])
